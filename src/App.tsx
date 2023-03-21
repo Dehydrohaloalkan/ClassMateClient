@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ScheduleTable from './components/ScheduleTable/ScheduleTable';
+
+type Props = {
+    dayOfWeek: string;
+    date: Date;
+    subjectItems: {
+        startTime: Date;
+        endTime: Date;
+        title: string;
+        room: string;
+    }[];
+};
+
+const data: Props = {
+    dayOfWeek: 'Понедельник',
+    date: new Date('01.01.2002'),
+    subjectItems: [
+        {
+            startTime: new Date('01.01.2002'),
+            endTime: new Date('01.01.2002'),
+            title: 'Математика',
+            room: '104-4',
+        },
+        {
+            startTime: new Date('01.01.2002'),
+            endTime: new Date('01.01.2002'),
+            title: 'Математика',
+            room: '104-4',
+        },
+        {
+            startTime: new Date('01.01.2002'),
+            endTime: new Date('01.01.2002'),
+            title: 'Математика',
+            room: '104-4',
+        },
+        {
+            startTime: new Date('01.01.2002'),
+            endTime: new Date('01.01.2002'),
+            title: 'Математика',
+            room: '104-4',
+        },
+    ],
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className='container p-15'>
+            <ScheduleTable item={data} />
+        </div>
+    );
 }
 
 export default App;
