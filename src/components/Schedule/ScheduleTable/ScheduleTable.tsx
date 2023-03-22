@@ -1,4 +1,4 @@
-import { ScheduleType } from '../../types/Schedule';
+import { ScheduleType } from '../../../types/Schedule';
 import ScheduleTableDateHeader from './ScheduleTableDateHeader';
 import ScheduleTableEmptyRow from './ScheduleTableEmptyRow';
 import ScheduleTableHeader from './ScheduleTableHeader';
@@ -28,14 +28,7 @@ export default function ScheduleTable({ item }: Props) {
                     <tbody>
                         {item.subjects.length ? (
                             item.subjects.map((item) => {
-                                return (
-                                    <ScheduleTableItem
-                                        startTime={item.startTime}
-                                        endTime={item.endTime}
-                                        title={item.title}
-                                        room={item.room}
-                                    />
-                                );
+                                return <ScheduleTableItem item={item} />;
                             })
                         ) : (
                             <ScheduleTableEmptyRow />

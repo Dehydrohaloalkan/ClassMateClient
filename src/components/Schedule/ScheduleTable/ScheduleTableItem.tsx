@@ -1,27 +1,26 @@
+import { SubjectType } from '../../../types/Schedule';
+
 type Props = {
-    startTime: Date;
-    endTime: Date;
-    title: string;
-    room: string;
+    item: SubjectType;
 };
 
-function ScheduleTableItem({ startTime, endTime, title, room }: Props) {
+function ScheduleTableItem({ item }: Props) {
     return (
         <tr>
             <td className='text-start'>
-                {startTime.toLocaleTimeString('ru-RU', {
+                {item.startTime.toLocaleTimeString('ru-RU', {
                     hour: '2-digit',
                     minute: '2-digit',
                 })}
             </td>
             <td className='text-start'>
-                {endTime.toLocaleTimeString('ru-RU', {
+                {item.endTime.toLocaleTimeString('ru-RU', {
                     hour: '2-digit',
                     minute: '2-digit',
                 })}
             </td>
-            <td className='text-start'>{title}</td>
-            <td className='text-start'>{room}</td>
+            <td className='text-start'>{item.title}</td>
+            <td className='text-start'>{item.room}</td>
         </tr>
     );
 }
