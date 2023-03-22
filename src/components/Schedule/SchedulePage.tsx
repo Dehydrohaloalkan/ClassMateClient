@@ -11,7 +11,7 @@ const schedule: ScheduleType[] = [
             {
                 startTime: new Date('01.01.2002'),
                 endTime: new Date('01.01.2002'),
-                title: 'Математика',
+                title: 'Английский Язык Английский Язык Английский Язык',
                 room: '104-4',
             },
             {
