@@ -1,5 +1,3 @@
-import React from 'react';
-
 type Props = {
     dayOfWeek: string;
     date: Date;
@@ -12,11 +10,7 @@ function ScheduleTableDateHeader({ dayOfWeek, date }: Props) {
                 {dayOfWeek}
             </th>
             <th className='text-end border border-secondary border-start-0'>
-                {date.getDate() +
-                    '/' +
-                    date.getMonth() +
-                    '/' +
-                    date.getFullYear()}
+                {date.toLocaleDateString('ru-RU')}
             </th>
         </tr>
     );

@@ -1,51 +1,164 @@
-import ScheduleTable from './components/ScheduleTable/ScheduleTable';
+import Schedule from './components/Schedule/Schedule';
+import { ScheduleType } from './types/Schedule';
 
-type Props = {
-    dayOfWeek: string;
-    date: Date;
-    subjectItems: {
-        startTime: Date;
-        endTime: Date;
-        title: string;
-        room: string;
-    }[];
-};
+type Props = ScheduleType[];
 
-const data: Props = {
-    dayOfWeek: 'Понедельник',
-    date: new Date('01.01.2002'),
-    subjectItems: [
-        {
-            startTime: new Date('01.01.2002'),
-            endTime: new Date('01.01.2002'),
-            title: 'Математика',
-            room: '104-4',
-        },
-        {
-            startTime: new Date('01.01.2002'),
-            endTime: new Date('01.01.2002'),
-            title: 'Математика',
-            room: '104-4',
-        },
-        {
-            startTime: new Date('01.01.2002'),
-            endTime: new Date('01.01.2002'),
-            title: 'Математика',
-            room: '104-4',
-        },
-        {
-            startTime: new Date('01.01.2002'),
-            endTime: new Date('01.01.2002'),
-            title: 'Математика',
-            room: '104-4',
-        },
-    ],
-};
+const data: Props = [
+    {
+        date: new Date('01.01.2002'),
+        subjects: [
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+        ],
+    },
+    {
+        date: new Date('01.02.2002'),
+        subjects: [
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+        ],
+    },
+    {
+        date: new Date('01.03.2002'),
+        subjects: [
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+        ],
+    },
+    {
+        date: new Date('01.04.2002'),
+        subjects: [
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+        ],
+    },
+    {
+        date: new Date('01.05.2002'),
+        subjects: [
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+            {
+                startTime: new Date('01.01.2002'),
+                endTime: new Date('01.01.2002'),
+                title: 'Математика',
+                room: '104-4',
+            },
+        ],
+    },
+    {
+        date: new Date('01.06.2002'),
+        subjects: [],
+    },
+];
 
 function App() {
     return (
         <div className='container p-15'>
-            <ScheduleTable item={data} />
+            <Schedule schedule={data} />
         </div>
     );
 }

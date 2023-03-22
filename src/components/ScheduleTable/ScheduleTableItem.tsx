@@ -9,10 +9,16 @@ function ScheduleTableItem({ startTime, endTime, title, room }: Props) {
     return (
         <tr>
             <td className='text-start'>
-                {startTime.getHours() + ':' + startTime.getMinutes()}
+                {startTime.toLocaleTimeString('ru-RU', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                })}
             </td>
             <td className='text-start'>
-                {endTime.getHours() + ':' + endTime.getMinutes()}
+                {endTime.toLocaleTimeString('ru-RU', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                })}
             </td>
             <td className='text-start'>{title}</td>
             <td className='text-start'>{room}</td>

@@ -1,43 +1,45 @@
+import { ScheduleType } from '../../types/Schedule';
 import ScheduleTableDateHeader from './ScheduleTableDateHeader';
+import ScheduleTableEmptyRow from './ScheduleTableEmptyRow';
 import ScheduleTableHeader from './ScheduleTableHeader';
 import ScheduleTableItem from './ScheduleTableItem';
 
 type Props = {
-    item: {
-        dayOfWeek: string;
-        date: Date;
-        subjectItems: {
-            startTime: Date;
-            endTime: Date;
-            title: string;
-            room: string;
-        }[];
-    };
+    item: ScheduleType;
 };
 
 export default function ScheduleTable({ item }: Props) {
+    const getWeekDay = (date: Date): string => {
+        let weekDay = date.toLocaleString('ru-RU', { weekday: 'long' });
+        return weekDay.charAt(0).toUpperCase() + weekDay.slice(1);
+    };
+
     return (
-        <div className='card'>
+        <div className='card shadow '>
             <div className='card-body'>
                 <table className='table table-bordered border-secondary table-striped'>
                     <thead>
                         <ScheduleTableDateHeader
-                            dayOfWeek={item.dayOfWeek}
+                            dayOfWeek={getWeekDay(item.date)}
                             date={item.date}
                         />
                         <ScheduleTableHeader />
                     </thead>
                     <tbody>
-                        {item.subjectItems.map((item) => {
-                            return (
-                                <ScheduleTableItem
-                                    startTime={item.startTime}
-                                    endTime={item.endTime}
-                                    title={item.title}
-                                    room={item.room}
-                                />
-                            );
-                        })}
+                        {item.subjects.length ? (
+                            item.subjects.map((item) => {
+                                return (
+                                    <ScheduleTableItem
+                                        startTime={item.startTime}
+                                        endTime={item.endTime}
+                                        title={item.title}
+                                        room={item.room}
+                                    />
+                                );
+                            })
+                        ) : (
+                            <ScheduleTableEmptyRow />
+                        )}
                     </tbody>
                 </table>
             </div>
