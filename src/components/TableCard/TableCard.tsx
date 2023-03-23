@@ -51,6 +51,7 @@ function TableCard<T>(props: Props<T>) {
                                         index={index}
                                         parseInfo={props.tableHeader}
                                         addIndexes={props.addIndexes}
+                                        itemColor={props.tableItemColor}
                                     />
                                 );
                             })

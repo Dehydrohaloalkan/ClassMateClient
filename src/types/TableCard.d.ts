@@ -20,4 +20,5 @@ export type TableItemColor =
     | 'table-warning'
     | 'table-info'
     | 'table-light'
-    | 'table-dark';
+    | 'table-dark'
+    | '';

@@ -1,8 +1,10 @@
 import { StudentType } from '../../types/Group';
-import SubGroupTable from './SubGroupTable/SubGroupTable';
+import SubGroupCard from './SubGroupCard';
+import WholeGroupCard from './WholeGroupCard';
+
 type Props = {};
 
-const items: StudentType[] = [
+const data: StudentType[] = [
     {
         name: 'Евгений',
         isGroupLeader: false,
@@ -47,21 +49,23 @@ const items: StudentType[] = [
     },
 ];
 
-function SubGroupPage({}: Props) {
+function GroupPage({}: Props) {
     return (
         <div className='container'>
             <h1 className='text-center text-muted'>Учащиеся</h1>
+            <WholeGroupCard items={data} />
+
             <div className='row'>
                 <div className='col g-4'>
-                    <SubGroupTable
-                        items={items.filter((item) => !item.subGroup)}
-                        header='1 подгруппа'
+                    <SubGroupCard
+                        items={data.filter((item) => !item.subGroup)}
+                        headerText='1 подгруппа'
                     />
                 </div>
                 <div className='col g-4'>
-                    <SubGroupTable
-                        items={items.filter((item) => item.subGroup)}
-                        header='2 подгруппа'
+                    <SubGroupCard
+                        items={data.filter((item) => item.subGroup)}
+                        headerText='2 подгруппа'
                     />
                 </div>
             </div>
@@ -69,4 +73,4 @@ function SubGroupPage({}: Props) {
     );
 }
 
-export default SubGroupPage;
+export default GroupPage;

@@ -18,7 +18,7 @@ function TableItem<T>({
     const trClassName = 'table-bordered border-secondary ' + itemColor?.(item);
     return (
         <tr className={trClassName}>
-            {addIndexes && <th className='text-start'>{index + 1}</th>}
+            {addIndexes && <td className='text-start'>{index + 1}</td>}
             {parseInfo.map((parseItem) => (
                 <td className='text-start'>{parseItem.key(item)}</td>
             ))}
