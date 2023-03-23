@@ -9,13 +9,13 @@ import TableItem from './TableItem';
 import TableEmptyRow from './TableEmptyRow';
 
 type Props<T> = {
+    tableHeader: TableHeaderItem<T>[];
+    tableItems: T[];
+    emptyRowText: string;
     header?: ReactNode;
     headerJustifyContent?: JustifyContentType;
     footer?: ReactNode;
     footerJustifyContent?: JustifyContentType;
-    tableHeader: TableHeaderItem<T>[];
-    tableItems: T[];
-    emptyRowText: string;
     tableItemColor?: (item: T) => TableItemColor;
     addIndexes?: boolean;
 };
@@ -26,7 +26,8 @@ function TableCard<T>(props: Props<T>) {
             {props.header && (
                 <div
                     className={
-                        'card-header d-flex ' + props.headerJustifyContent || ''
+                        'card-header d-flex ' +
+                        (props.headerJustifyContent || '')
                     }
                 >
                     {props.header}
@@ -36,7 +37,10 @@ function TableCard<T>(props: Props<T>) {
             <div className='card-body'>
                 <table className='table table-bordered border-secondary table-striped table-hover'>
                     <thead>
-                        <TableHeader items={props.tableHeader} />
+                        <TableHeader
+                            items={props.tableHeader}
+                            addIndexes={props.addIndexes}
+                        />
                     </thead>
                     <tbody>
                         {props.tableItems.length ? (
@@ -46,7 +50,7 @@ function TableCard<T>(props: Props<T>) {
                                         item={item}
                                         index={index}
                                         parseInfo={props.tableHeader}
-                                        addIndexes
+                                        addIndexes={props.addIndexes}
                                     />
                                 );
                             })
@@ -66,7 +70,8 @@ function TableCard<T>(props: Props<T>) {
             {props.footer && (
                 <div
                     className={
-                        'card-footer d-flex ' + props.footerJustifyContent || ''
+                        'card-footer d-flex ' +
+                        (props.footerJustifyContent || '')
                     }
                 >
                     {props.footer}

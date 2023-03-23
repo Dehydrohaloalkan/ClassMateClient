@@ -7,7 +7,7 @@ type Props<T> = {
 
 function TableHeader<T>({ items, addIndexes }: Props<T>) {
     const thClassName = (item: TableHeaderItem<T>) => {
-        return 'text-center' + item.fit ? ' fit' : '';
+        return 'text-center' + (item.fit ? ' fit' : '');
     };
     return (
         <tr className='table-primary table-bordered border-secondary'>

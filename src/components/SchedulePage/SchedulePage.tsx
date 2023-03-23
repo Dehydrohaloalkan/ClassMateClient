@@ -1,6 +1,6 @@
 import { ScheduleType } from '../../types/Schedule';
-import ScheduleTable from './ScheduleTable/ScheduleTable';
 import ScheduleHeader from './ScheduleHeader';
+import ScheduleCard from './ScheduleCard';
 
 type Props = {};
 
@@ -165,26 +165,26 @@ function SchedulePage({}: Props) {
             />
             <div className='row'>
                 <div className='col g-4'>
-                    <ScheduleTable item={schedule[0]} />
+                    <ScheduleCard item={schedule[0]} />
                 </div>
                 <div className='col g-4'>
-                    <ScheduleTable item={schedule[1]} />
-                </div>
-            </div>
-            <div className='row '>
-                <div className='col g-4'>
-                    <ScheduleTable item={schedule[2]} />
-                </div>
-                <div className='col g-4'>
-                    <ScheduleTable item={schedule[3]} />
+                    <ScheduleCard item={schedule[1]} />
                 </div>
             </div>
             <div className='row '>
                 <div className='col g-4'>
-                    <ScheduleTable item={schedule[4]} />
+                    <ScheduleCard item={schedule[2]} />
                 </div>
                 <div className='col g-4'>
-                    <ScheduleTable item={schedule[5]} />
+                    <ScheduleCard item={schedule[3]} />
+                </div>
+            </div>
+            <div className='row '>
+                <div className='col g-4'>
+                    <ScheduleCard item={schedule[4]} />
+                </div>
+                <div className='col g-4'>
+                    <ScheduleCard item={schedule[5]} />
                 </div>
             </div>
         </div>
