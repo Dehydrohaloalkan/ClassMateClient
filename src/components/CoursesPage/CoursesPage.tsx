@@ -1,5 +1,5 @@
-import CoursesTable from './CoursesTable/CoursesTable';
 import { CourseType } from '../../types/Courses';
+import CoursesCard from './CoursesCard';
 
 type Props = {};
 
@@ -38,7 +38,7 @@ function CoursesPage({}: Props) {
     return (
         <div className='container'>
             <h1 className='text-center text-muted'>Курсы</h1>
-            <CoursesTable items={data} />
+            <CoursesCard items={data} />
         </div>
     );
 }

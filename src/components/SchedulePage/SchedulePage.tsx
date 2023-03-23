@@ -4,7 +4,7 @@ import ScheduleCard from './ScheduleCard';
 
 type Props = {};
 
-const schedule: ScheduleType[] = [
+const data: ScheduleType[] = [
     {
         date: new Date('01.01.2002'),
         subjects: [
@@ -159,32 +159,29 @@ const schedule: ScheduleType[] = [
 function SchedulePage({}: Props) {
     return (
         <div className='container p-4'>
-            <ScheduleHeader
-                startDate={schedule[0].date}
-                endDate={schedule[5].date}
-            />
+            <ScheduleHeader startDate={data[0].date} endDate={data[5].date} />
             <div className='row'>
                 <div className='col g-4'>
-                    <ScheduleCard item={schedule[0]} />
+                    <ScheduleCard item={data[0]} />
                 </div>
                 <div className='col g-4'>
-                    <ScheduleCard item={schedule[1]} />
-                </div>
-            </div>
-            <div className='row '>
-                <div className='col g-4'>
-                    <ScheduleCard item={schedule[2]} />
-                </div>
-                <div className='col g-4'>
-                    <ScheduleCard item={schedule[3]} />
+                    <ScheduleCard item={data[1]} />
                 </div>
             </div>
             <div className='row '>
                 <div className='col g-4'>
-                    <ScheduleCard item={schedule[4]} />
+                    <ScheduleCard item={data[2]} />
                 </div>
                 <div className='col g-4'>
-                    <ScheduleCard item={schedule[5]} />
+                    <ScheduleCard item={data[3]} />
+                </div>
+            </div>
+            <div className='row '>
+                <div className='col g-4'>
+                    <ScheduleCard item={data[4]} />
+                </div>
+                <div className='col g-4'>
+                    <ScheduleCard item={data[5]} />
                 </div>
             </div>
         </div>

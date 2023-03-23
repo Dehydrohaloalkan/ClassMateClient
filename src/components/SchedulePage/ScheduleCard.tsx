@@ -28,7 +28,6 @@ const tableHeader: TableHeaderItem<SubjectType>[] = [
     {
         title: 'Предмет',
         key: (item) => item.title,
-        fit: false,
     },
     {
         title: 'Аудитория',

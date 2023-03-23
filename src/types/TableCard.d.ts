@@ -9,7 +9,7 @@ export type JustifyContentType =
 export type TableHeaderItem<T> = {
     title: string;
     key: (item: T) => string;
-    fit: bool;
+    fit?: bool;
 };
 
 export type TableItemColor =

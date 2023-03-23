@@ -1,4 +1,4 @@
-import CoursesPage from './components/Courses/CoursesPage';
+import CoursesPage from './components/CoursesPage/CoursesPage';
 import SubGroupPage from './components/Group/SubGroupPage';
 import WholeGroupPage from './components/Group/WholeGroupPage';
 
@@ -8,12 +8,12 @@ function App() {
     return (
         <div className='container p-15'>
             {/* <TableCard /> */}
+
+            <WholeGroupPage />
+
             <SchedulePage />
-
-            {/* <WholeGroupPage />
-            <SubGroupPage /> */}
-
-            {/* <CoursesPage /> */}
+            <CoursesPage />
+            {/* <SubGroupPage /> */}
         </div>
     );
 }
