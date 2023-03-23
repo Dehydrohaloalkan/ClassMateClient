@@ -15,7 +15,7 @@ export default function ScheduleTable({ item }: Props) {
     };
 
     return (
-        <div className='card shadow '>
+        <div className='card shadow'>
             <div className='card-body'>
                 <table className='table table-bordered border-secondary table-striped'>
                     <thead>

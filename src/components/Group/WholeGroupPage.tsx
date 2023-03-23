@@ -1,5 +1,5 @@
 import { StudentType } from '../../types/Group';
-import GroupTable from './GroupTable/GroupTable';
+import WholeGroupTable from './WholeGroupTable/WholeGroupTable';
 
 type Props = {};
 
@@ -52,7 +52,7 @@ function WholeGroupPage({}: Props) {
     return (
         <div className='container'>
             <h1 className='text-center text-muted'>Учащиеся</h1>
-            <GroupTable items={items} />
+            <WholeGroupTable items={items} />
         </div>
     );
 }

@@ -10,7 +10,7 @@ function ScheduleHeader({ startDate, endDate }: Props) {
     return (
         <div className='row justify-content-md-center'>
             <div className='col col-lg-2 position-relative'>
-                <button className='btn btn-outline-info position-absolute top-50 start-50 translate-middle'>
+                <button className='btn btn-outline-info rounded-circle position-absolute top-50 start-50 translate-middle'>
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
             </div>
@@ -22,7 +22,7 @@ function ScheduleHeader({ startDate, endDate }: Props) {
                 </h1>
             </div>
             <div className='col col-lg-2 position-relative'>
-                <button className='btn btn-outline-info position-absolute top-50 start-50 translate-middle'>
+                <button className='btn btn-outline-info rounded-circle position-absolute top-50 start-50 translate-middle'>
                     <FontAwesomeIcon icon={faArrowRight} />
                 </button>
             </div>

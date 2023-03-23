@@ -5,7 +5,7 @@ type Props = {
     index: number;
 };
 
-function GroupTableItem({ item, index }: Props) {
+function WholeGroupTableItem({ item, index }: Props) {
     let className = 'table-bordered border-secondary ';
 
     if (item.isGroupLeader) className += 'table-warning';
@@ -13,11 +13,11 @@ function GroupTableItem({ item, index }: Props) {
 
     return (
         <tr className={className}>
-            <td className='text-start fit'>{index}</td>
+            <td className='text-start'>{index + 1}</td>
             <td className='text-start'>{item.name}</td>
-            <td className='text-start fit'>{item.subGroup ? '2' : '1'}</td>
+            <td className='text-start'>{item.subGroup ? '2' : '1'}</td>
         </tr>
     );
 }
 
-export default GroupTableItem;
+export default WholeGroupTableItem;
