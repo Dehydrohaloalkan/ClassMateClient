@@ -27,6 +27,7 @@ function SubGroupCard({ items, headerText }: Props) {
             tableItems={items}
             emptyRowText='В подгруппе никого нет'
             addIndexes
+            tableStriped
             tableItemColor={itemColor}
             header={<h5>{headerText}</h5>}
             headerJustifyContent='justify-content-center'

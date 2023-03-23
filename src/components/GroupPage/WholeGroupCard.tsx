@@ -31,6 +31,7 @@ function WholeGroupCard({ items }: Props) {
             tableItems={items}
             emptyRowText='В группе никого нет'
             addIndexes
+            tableStriped
             tableItemColor={itemColor}
             footer={
                 <>

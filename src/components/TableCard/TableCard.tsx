@@ -18,9 +18,13 @@ type Props<T> = {
     footerJustifyContent?: JustifyContentType;
     tableItemColor?: (item: T) => TableItemColor;
     addIndexes?: boolean;
+    tableStriped?: boolean;
 };
 
 function TableCard<T>(props: Props<T>) {
+    const tableClass =
+        'table table-bordered border-secondary table-hover ' +
+        (props.tableStriped ? 'table-striped' : '');
     return (
         <div className='card shadow'>
             {props.header && (
@@ -34,8 +38,8 @@ function TableCard<T>(props: Props<T>) {
                 </div>
             )}
 
-            <div className='card-body'>
-                <table className='table table-bordered border-secondary table-striped table-hover'>
+            <div className='card-body overflow-auto'>
+                <table className={tableClass}>
                     <thead>
                         <TableHeader
                             items={props.tableHeader}

@@ -38,6 +38,7 @@ function CoursesCard({ items }: Props) {
             tableItems={items}
             emptyRowText='Текущих курсов нет'
             addIndexes
+            tableStriped
         />
     );
 }

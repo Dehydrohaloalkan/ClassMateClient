@@ -8,7 +8,7 @@ export type JustifyContentType =
 
 export type TableHeaderItem<T> = {
     title: string;
-    key: (item: T) => string;
+    key: (item: T) => string | ReactNode;
     fit?: bool;
 };
 
