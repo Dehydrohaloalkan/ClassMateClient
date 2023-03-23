@@ -1,9 +1,9 @@
-import { ScheduleType, SubjectType } from '../../types/Schedule';
-import { TableHeaderItem } from '../../types/TableCard';
+import { DiaryType, SubjectType } from '../../types/Diary';
+import { TableHeaderItem, TableItemColor } from '../../types/TableCard';
 import TableCard from '../TableCard/TableCard';
 
 type Props = {
-    item: ScheduleType;
+    item: DiaryType;
 };
 
 const tableHeader: TableHeaderItem<SubjectType>[] = [
@@ -34,6 +34,11 @@ const tableHeader: TableHeaderItem<SubjectType>[] = [
         key: (item) => item.room,
         fit: true,
     },
+    {
+        title: 'Отметка',
+        key: (item) => item.grade?.toString() || '',
+        fit: true,
+    },
 ];
 
 const getWeekDay = (date: Date): string => {
@@ -41,12 +46,18 @@ const getWeekDay = (date: Date): string => {
     return weekDay.charAt(0).toUpperCase() + weekDay.slice(1);
 };
 
-function ScheduleCard({ item }: Props) {
+const itemColor = (item: SubjectType): TableItemColor => {
+    if (item.absence) return 'table-danger';
+    return '';
+};
+
+function DiaryCard({ item }: Props) {
     return (
         <TableCard<SubjectType>
             tableHeader={tableHeader}
             tableItems={item.subjects}
             emptyRowText='В этот день занятий нет'
+            tableItemColor={itemColor}
             header={
                 <>
                     <h4>{getWeekDay(item.date)}</h4>
@@ -54,8 +65,11 @@ function ScheduleCard({ item }: Props) {
                 </>
             }
             headerJustifyContent='justify-content-between'
+            footer={
+                <span className='badge text-bg-danger m-1'>Отсутствие</span>
+            }
         />
     );
 }
 
-export default ScheduleCard;
+export default DiaryCard;

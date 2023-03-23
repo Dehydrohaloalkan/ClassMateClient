@@ -3,9 +3,11 @@ export type SubjectType = {
     endTime: Date;
     title: string;
     room: string;
+    absence?: boolean;
+    grade?: number;
 };
 
-export type ScheduleType = {
+export type DiaryType = {
     date: Date;
     subjects: SubjectType[];
 };

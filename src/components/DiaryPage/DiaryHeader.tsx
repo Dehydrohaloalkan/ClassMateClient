@@ -6,7 +6,7 @@ type Props = {
     endDate: Date;
 };
 
-function ScheduleHeader({ startDate, endDate }: Props) {
+function DiaryHeader({ startDate, endDate }: Props) {
     return (
         <div className='row justify-content-md-center'>
             <div className='col col-lg-2 position-relative'>
@@ -30,4 +30,4 @@ function ScheduleHeader({ startDate, endDate }: Props) {
     );
 }
 
-export default ScheduleHeader;
+export default DiaryHeader;

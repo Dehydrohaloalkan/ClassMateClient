@@ -1,14 +1,14 @@
 import CoursesPage from './components/CoursesPage/CoursesPage';
 import GroupPage from './components/Group/GroupPage';
 
-import SchedulePage from './components/SchedulePage/SchedulePage';
+import DiaryPage from './components/DiaryPage/DiaryPage';
 
 function App() {
     return (
         <div className='container p-15'>
             {/* <TableCard /> */}
             <GroupPage />
-            <SchedulePage />
+            <DiaryPage />
             <CoursesPage />
             {/* <SubGroupPage /> */}
         </div>
