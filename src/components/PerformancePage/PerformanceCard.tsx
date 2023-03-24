@@ -25,7 +25,7 @@ function PerformanceCard({ items }: Props) {
             <TableCard<PerformanceTableRow>
                 tableHeader={tableHeader}
                 tableItems={tableItems}
-                emptyRowText='text'
+                emptyRowText='Занятия не проводились'
                 tableStriped
                 stickyColumnHeader={stickyColumnHeader}
                 stickyColumnItems={tableItems}

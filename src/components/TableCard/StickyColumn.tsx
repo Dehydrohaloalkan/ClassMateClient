@@ -1,4 +1,5 @@
 import { TableHeaderItem } from '../../types/TableCard';
+import StickyEmptyCell from './StickyEmptyCell';
 import TableHeader from './TableHeader';
 import TableItem from './TableItem';
 
@@ -19,15 +20,19 @@ function StickyColumn<T>({
                 <TableHeader<T> items={[stickyColumnHeader]} />
             </thead>
             <tbody>
-                {stickyColumnItems.map((item, index) => {
-                    return (
-                        <TableItem
-                            item={item}
-                            index={index}
-                            parseInfo={[stickyColumnHeader]}
-                        />
-                    );
-                })}
+                {stickyColumnItems.length ? (
+                    stickyColumnItems.map((item, index) => {
+                        return (
+                            <TableItem
+                                item={item}
+                                index={index}
+                                parseInfo={[stickyColumnHeader]}
+                            />
+                        );
+                    })
+                ) : (
+                    <StickyEmptyCell />
+                )}
             </tbody>
         </table>
     );
