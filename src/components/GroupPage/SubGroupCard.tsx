@@ -14,7 +14,7 @@ const tableHeader: TableHeaderItem<StudentType>[] = [
     },
 ];
 
-const itemColor = (item: StudentType): TableItemColor => {
+const rowColor = (item: StudentType): TableItemColor => {
     if (item.isGroupLeader) return 'table-warning';
     if (item.isMarking) return 'table-success';
     return '';
@@ -28,7 +28,7 @@ function SubGroupCard({ items, headerText }: Props) {
             emptyRowText='В подгруппе никого нет'
             addIndexes
             tableStriped
-            tableItemColor={itemColor}
+            tableRowColor={rowColor}
             header={<h5>{headerText}</h5>}
             headerJustifyContent='justify-content-center'
             footer={

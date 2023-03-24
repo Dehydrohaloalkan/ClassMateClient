@@ -20,7 +20,9 @@ function TableItem<T>({
         <tr className={trClassName}>
             {addIndexes && <td className='text-start'>{index + 1}</td>}
             {parseInfo.map((parseItem) => (
-                <td className='text-start'>{parseItem.key(item)}</td>
+                <td className={'text-start ' + (parseItem.fit ? 'fit' : '')}>
+                    {parseItem.key(item)}
+                </td>
             ))}
         </tr>
     );

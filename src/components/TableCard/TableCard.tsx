@@ -7,16 +7,21 @@ import {
 import TableHeader from './TableHeader';
 import TableItem from './TableItem';
 import TableEmptyRow from './TableEmptyRow';
+import StickyColumn from './StickyColumn';
 
 type Props<T> = {
     tableHeader: TableHeaderItem<T>[];
     tableItems: T[];
     emptyRowText: string;
+
+    stickyColumnHeader?: TableHeaderItem<T>;
+    stickyColumnItems?: T[];
+
     header?: ReactNode;
     headerJustifyContent?: JustifyContentType;
     footer?: ReactNode;
     footerJustifyContent?: JustifyContentType;
-    tableItemColor?: (item: T) => TableItemColor;
+    tableRowColor?: (item: T) => TableItemColor;
     addIndexes?: boolean;
     tableStriped?: boolean;
 };
@@ -38,38 +43,52 @@ function TableCard<T>(props: Props<T>) {
                 </div>
             )}
 
-            <div className='card-body overflow-auto'>
-                <table className={tableClass}>
-                    <thead>
-                        <TableHeader
-                            items={props.tableHeader}
-                            addIndexes={props.addIndexes}
-                        />
-                    </thead>
-                    <tbody>
-                        {props.tableItems.length ? (
-                            props.tableItems.map((item, index) => {
-                                return (
-                                    <TableItem
-                                        item={item}
-                                        index={index}
-                                        parseInfo={props.tableHeader}
-                                        addIndexes={props.addIndexes}
-                                        itemColor={props.tableItemColor}
-                                    />
-                                );
-                            })
-                        ) : (
-                            <TableEmptyRow
-                                columnCount={
-                                    props.tableHeader.length +
-                                    (props.addIndexes ? 1 : 0)
-                                }
-                                text={props.emptyRowText}
+            <div className='card-body'>
+                <div className='d-flex'>
+                    {props.stickyColumnItems && props.stickyColumnHeader && (
+                        <div>
+                            <StickyColumn
+                                tableClass={tableClass}
+                                stickyColumnHeader={props.stickyColumnHeader}
+                                stickyColumnItems={props.stickyColumnItems}
                             />
-                        )}
-                    </tbody>
-                </table>
+                        </div>
+                    )}
+
+                    <div className='overflow-auto flex-fill'>
+                        <table className={tableClass}>
+                            <thead>
+                                <TableHeader
+                                    items={props.tableHeader}
+                                    addIndexes={props.addIndexes}
+                                />
+                            </thead>
+                            <tbody>
+                                {props.tableItems.length ? (
+                                    props.tableItems.map((item, index) => {
+                                        return (
+                                            <TableItem
+                                                item={item}
+                                                index={index}
+                                                parseInfo={props.tableHeader}
+                                                addIndexes={props.addIndexes}
+                                                itemColor={props.tableRowColor}
+                                            />
+                                        );
+                                    })
+                                ) : (
+                                    <TableEmptyRow
+                                        columnCount={
+                                            props.tableHeader.length +
+                                            (props.addIndexes ? 1 : 0)
+                                        }
+                                        text={props.emptyRowText}
+                                    />
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
             {props.footer && (

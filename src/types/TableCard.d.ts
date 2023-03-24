@@ -9,7 +9,7 @@ export type JustifyContentType =
 export type TableHeaderItem<T> = {
     title: string;
     key: (item: T) => string | ReactNode;
-    fit?: bool;
+    fit?: boolean;
 };
 
 export type TableItemColor =

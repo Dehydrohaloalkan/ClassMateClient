@@ -46,7 +46,7 @@ const getWeekDay = (date: Date): string => {
     return weekDay.charAt(0).toUpperCase() + weekDay.slice(1);
 };
 
-const itemColor = (item: SubjectType): TableItemColor => {
+const rowColor = (item: SubjectType): TableItemColor => {
     if (item.absence) return 'table-danger';
     return '';
 };
@@ -57,7 +57,7 @@ function DiaryCard({ item }: Props) {
             tableHeader={tableHeader}
             tableItems={item.subjects}
             emptyRowText='В этот день занятий нет'
-            tableItemColor={itemColor}
+            tableRowColor={rowColor}
             header={
                 <>
                     <h4>{getWeekDay(item.date)}</h4>
