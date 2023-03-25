@@ -1,11 +1,11 @@
 import { CourseType } from '../../types/Courses';
 import TableCard from '../TableCard/TableCard';
-import { TableHeaderItem } from '../../types/TableCard';
+import { TableHeaderType } from '../../types/TableCard';
 type Props = {
     items: CourseType[];
 };
 
-const tableHeader: TableHeaderItem<CourseType>[] = [
+const tableHeader: TableHeaderType<CourseType>[] = [
     {
         title: 'Тип',
         key: (item) => item.type,

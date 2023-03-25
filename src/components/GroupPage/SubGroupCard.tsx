@@ -1,13 +1,13 @@
 import { StudentType } from '../../types/Group';
 import TableCard from '../TableCard/TableCard';
-import { TableHeaderItem, TableItemColor } from '../../types/TableCard';
+import { TableHeaderType, TableItemColor } from '../../types/TableCard';
 
 type Props = {
     items: StudentType[];
     headerText: string;
 };
 
-const tableHeader: TableHeaderItem<StudentType>[] = [
+const tableHeader: TableHeaderType<StudentType>[] = [
     {
         title: 'ФИО',
         key: (item) => item.name,

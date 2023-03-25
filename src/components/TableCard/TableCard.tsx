@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import {
     JustifyContentType,
-    TableHeaderItem,
+    TableHeaderType,
     TableItemColor,
 } from '../../types/TableCard';
 import TableHeader from './TableHeader';
@@ -10,11 +10,13 @@ import TableEmptyRow from './TableEmptyRow';
 import StickyColumn from './StickyColumn';
 
 type Props<T> = {
-    tableHeader: TableHeaderItem<T>[];
+    tableHeader: TableHeaderType<T>[];
     tableItems: T[];
     emptyRowText: string;
 
-    stickyColumnHeader?: TableHeaderItem<T>;
+    doubleHeader?: any[];
+
+    stickyColumnHeader?: TableHeaderType<T>;
     stickyColumnItems?: T[];
 
     header?: ReactNode;

@@ -3,9 +3,3 @@
     white-space: nowrap;
     width: 1%;
 }
-
-.vertical-text {
-    writing-mode: vertical-lr;
-    /* transform: rotate(180deg); */
-    text-orientation: mixed;
-}

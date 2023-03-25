@@ -1,9 +1,9 @@
-import { TableHeaderItem, TableItemColor } from '../../types/TableCard';
+import { TableHeaderType, TableItemColor } from '../../types/TableCard';
 
 type Props<T> = {
     item: T;
     index: number;
-    parseInfo: TableHeaderItem<T>[];
+    parseInfo: TableHeaderType<T>[];
     itemColor?: (item: T) => TableItemColor;
     addIndexes?: boolean;
 };

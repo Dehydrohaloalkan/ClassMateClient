@@ -1,12 +1,12 @@
 import { DiaryType, SubjectType } from '../../types/Diary';
-import { TableHeaderItem, TableItemColor } from '../../types/TableCard';
+import { TableHeaderType, TableItemColor } from '../../types/TableCard';
 import TableCard from '../TableCard/TableCard';
 
 type Props = {
     item: DiaryType;
 };
 
-const tableHeader: TableHeaderItem<SubjectType>[] = [
+const tableHeader: TableHeaderType<SubjectType>[] = [
     {
         title: 'Начало',
         key: (item) =>

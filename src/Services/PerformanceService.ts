@@ -1,14 +1,14 @@
-import { PerformanceItem, PerformanceTableRow } from '../types/Performance';
-import { TableHeaderItem } from '../types/TableCard';
+import { PerformanceType, PerformanceTableType } from '../types/Performance';
+import { TableHeaderType } from '../types/TableCard';
 
 export function GetTableHeader(
-    items: PerformanceItem[]
-): TableHeaderItem<PerformanceTableRow>[] {
+    items: PerformanceType[]
+): TableHeaderType<PerformanceTableType>[] {
     const uniqueDates = [
         ...new Set(items.map((item) => item.date.toISOString())),
     ].map((dateString) => new Date(dateString));
 
-    const header: TableHeaderItem<PerformanceTableRow>[] = uniqueDates.map(
+    const header: TableHeaderType<PerformanceTableType>[] = uniqueDates.map(
         (item) => {
             return {
                 title: item.toLocaleString('ru-RU', {
@@ -55,7 +55,7 @@ export function GetTableHeader(
     });
 
     header.push({
-        title: 'Количество пропусков',
+        title: 'Пропуски',
         key: (item) =>
             item.items.filter((item) => item.absence === true).length || '',
         fit: true,
@@ -64,8 +64,8 @@ export function GetTableHeader(
     return header;
 }
 
-export const GetTableRows = (performanceItems: PerformanceItem[]) =>
-    performanceItems.reduce<PerformanceTableRow[]>((result, item) => {
+export const GetTableRows = (performanceItems: PerformanceType[]) =>
+    performanceItems.reduce<PerformanceTableType[]>((result, item) => {
         let row = result.find((row) => row.subjectId === item.subjectId);
         if (!row) {
             row = {

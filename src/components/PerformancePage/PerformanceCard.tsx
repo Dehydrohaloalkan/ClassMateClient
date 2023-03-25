@@ -2,19 +2,19 @@ import {
     GetTableHeader,
     GetTableRows,
 } from '../../Services/PerformanceService';
-import { TableHeaderItem } from '../../types/TableCard';
-import { PerformanceItem, PerformanceTableRow } from '../../types/Performance';
+import { TableHeaderType } from '../../types/TableCard';
+import { PerformanceType, PerformanceTableType } from '../../types/Performance';
 import TableCard from '../TableCard/TableCard';
 
 type Props = {
-    items: PerformanceItem[];
+    items: PerformanceType[];
 };
 
 function PerformanceCard({ items }: Props) {
     const tableHeader = GetTableHeader(items);
     const tableItems = GetTableRows(items);
 
-    const stickyColumnHeader: TableHeaderItem<PerformanceTableRow> = {
+    const stickyColumnHeader: TableHeaderType<PerformanceTableType> = {
         title: 'Предмет',
         key: (item) => item.subjectTitle,
         fit: true,
@@ -22,7 +22,7 @@ function PerformanceCard({ items }: Props) {
 
     return (
         <div className='overflow-auto'>
-            <TableCard<PerformanceTableRow>
+            <TableCard<PerformanceTableType>
                 tableHeader={tableHeader}
                 tableItems={tableItems}
                 emptyRowText='Занятия не проводились'

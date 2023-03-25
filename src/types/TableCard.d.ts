@@ -1,3 +1,14 @@
+export type TableHeaderType<T> = {
+    title: string;
+    key: (item: T) => string | ReactNode;
+    fit?: boolean;
+};
+
+export type DoubleHeaderType = {
+    title: string;
+    count: number;
+};
+
 export type JustifyContentType =
     | 'justify-content-start'
     | 'justify-content-end'
@@ -5,12 +16,6 @@ export type JustifyContentType =
     | 'justify-content-between'
     | 'justify-content-around'
     | 'justify-content-evenly';
-
-export type TableHeaderItem<T> = {
-    title: string;
-    key: (item: T) => string | ReactNode;
-    fit?: boolean;
-};
 
 export type TableItemColor =
     | 'table-primary'

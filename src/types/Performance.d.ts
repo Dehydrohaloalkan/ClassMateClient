@@ -1,4 +1,4 @@
-export type PerformanceItem = {
+export type PerformanceType = {
     subjectTitle: string;
     subjectId: number;
     date: Date;
@@ -6,7 +6,7 @@ export type PerformanceItem = {
     grade?: number;
 };
 
-export type PerformanceTableRow = {
+export type PerformanceTableType = {
     subjectTitle: string;
     subjectId: number;
     items: {
