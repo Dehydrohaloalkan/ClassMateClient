@@ -15,6 +15,7 @@ type Props<T> = {
     emptyRowText: string;
 
     doubleHeader?: any[];
+    doubleStickyHeader?: string;
 
     stickyColumnHeader?: TableHeaderType<T>;
     stickyColumnItems?: T[];
@@ -47,15 +48,11 @@ function TableCard<T>(props: Props<T>) {
 
             <div className='card-body'>
                 <div className='d-flex'>
-                    {props.stickyColumnItems && props.stickyColumnHeader && (
-                        <div>
-                            <StickyColumn
-                                tableClass={tableClass}
-                                stickyColumnHeader={props.stickyColumnHeader}
-                                stickyColumnItems={props.stickyColumnItems}
-                            />
-                        </div>
-                    )}
+                    <StickyColumn
+                        tableClassName={tableClass}
+                        stickyColumnHeader={props.stickyColumnHeader}
+                        stickyColumnItems={props.stickyColumnItems}
+                    />
 
                     <div className='overflow-auto flex-fill'>
                         <table className={tableClass}>

@@ -46,7 +46,7 @@ function PerformancePage({}: Props) {
     return (
         <div className='container'>
             <h1 className='text-center text-muted'>Оценки и посещаемость</h1>
-            <PerformanceCard items={data} />{' '}
+            <PerformanceCard items={data} />
         </div>
     );
 }

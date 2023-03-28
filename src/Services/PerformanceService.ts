@@ -7,6 +7,10 @@ export function GetTableHeader(
     const uniqueDates = [
         ...new Set(items.map((item) => item.date.toISOString())),
     ].map((dateString) => new Date(dateString));
+    console.log(
+        '🚀 ~ file: PerformanceService.ts:10 ~ uniqueDates:',
+        uniqueDates
+    );
 
     const header: TableHeaderType<PerformanceTableType>[] = uniqueDates.map(
         (item) => {
